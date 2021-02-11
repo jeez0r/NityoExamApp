@@ -136,15 +136,29 @@
 
 
                 <Button
+                    android:visibility="visible"
                     android:id="@+id/btn_addproduct"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="50dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Add Product"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="8dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@android:color/holo_blue_dark"
 
-                    />
+                    android:text="Add Product"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/btn_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/holo_blue_dark"
+                    android:text="Update Product"
+                    android:textColor="#FFFFFF" />
 
                 <Button
                     android:id="@+id/btn_cancel"

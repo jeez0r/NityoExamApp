@@ -20,6 +20,8 @@ import com.example.examapp.SqlLiteDatabase.DatabaseHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private ListView listViewProductList;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     AllProductsAdapter allProductsAdapter;
     DatabaseHelper databaseHelper;
 
+    public static boolean KEY_UPDATE = false;
     public static  String KEY_PRODUCTNAME = "";
     public static  String KEY_PRODUCT_UNIT ="";
     public static  String KEY_PRODUCTDATE = "";
@@ -84,8 +87,13 @@ public class MainActivity extends AppCompatActivity {
         setListView();
     }
     public void viewAddProduct(View view) {
+        KEY_UPDATE = false;
 
         startActivity(new Intent(MainActivity.this, AddProduct.class));
+
+
+
+
 
     }
 

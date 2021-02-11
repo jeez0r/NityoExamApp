@@ -7,17 +7,31 @@
     tools:context=".ViewProduct">
 
     <Button
-        android:backgroundTint="@android:color/holo_red_dark"
-        android:textColor="@android:color/primary_text_dark_nodisable"
-        android:textStyle="bold"
         android:id="@+id/btn_delete"
         android:layout_width="88dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:backgroundTint="@android:color/holo_red_dark"
         android:text="Delete"
+        android:textColor="@android:color/primary_text_dark_nodisable"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_add"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btn_Update"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:text="Update"
+        android:textColor="@android:color/primary_text_dark_nodisable"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_delete"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btn_add"
         app:layout_constraintVertical_bias="1.0" />

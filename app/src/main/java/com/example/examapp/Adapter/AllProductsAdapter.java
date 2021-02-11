@@ -12,8 +12,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.examapp.AddProduct;
 import com.example.examapp.Models.ProductModel;
 import com.example.examapp.R;
+import com.example.examapp.SqlLiteDatabase.DatabaseHelper;
 
 import java.io.InputStream;
 import java.util.List;
@@ -21,11 +23,13 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import static com.example.examapp.MainActivity.KEY_PRODUCTID;
+
 public class AllProductsAdapter extends ArrayAdapter<ProductModel> {
     private static final String TAG = "AllProductsAdapter";
         private Context context;
         private List<ProductModel> productModelList;
-
+    DatabaseHelper databaseHelper;
     public AllProductsAdapter(Context context, List<ProductModel> productModelList) {
         super(context , R.layout.allproducts, productModelList);
         this.context = context;
@@ -45,7 +49,7 @@ public class AllProductsAdapter extends ArrayAdapter<ProductModel> {
         TextView tv_expiryDateList= view.findViewById(R.id.tv_expiryDateList);
         ImageView img_productList = view.findViewById(R.id.img_productList);
         TextView tv_id = view.findViewById(R.id.tv_id);
-
+        databaseHelper = new DatabaseHelper(context);
         IMAGEUri = productModelList.get(position).getImageUri();
 
 

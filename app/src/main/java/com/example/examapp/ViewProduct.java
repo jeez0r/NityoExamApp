@@ -21,18 +21,19 @@ import static com.example.examapp.MainActivity.KEY_PRODUCTDATE;
 import static com.example.examapp.MainActivity.KEY_PRODUCTID;
 import static com.example.examapp.MainActivity.KEY_PRODUCTNAME;
 import static com.example.examapp.MainActivity.KEY_PRODUCT_UNIT;
+import static com.example.examapp.MainActivity.KEY_UPDATE;
 
 public class ViewProduct extends AppCompatActivity {
 
     ProductModel productModel;
-    Button btn_add,btn_delete,btn_viewall;
+    Button btn_Update,btn_delete,btn_viewall;
     TextView tv_productName,tv_price,tv_unit,tv_expiryDate,tv_availInvent,tv_imageUrl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_product);
 
-        btn_add = findViewById(R.id.btn_add);
+        btn_Update = findViewById(R.id.btn_Update);
         btn_delete = findViewById(R.id.btn_delete);
         btn_viewall = findViewById(R.id.btn_viewAll);
         tv_productName = (TextView)findViewById(R.id.tv_productName);
@@ -68,7 +69,7 @@ public class ViewProduct extends AppCompatActivity {
 
                         databaseHelper.deleteOne(KEY_PRODUCTID);
 
-                        Toast.makeText(ViewProduct.this, "Deleted Successfully Product ID:"+KEY_PRODUCTID, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ViewProduct.this, "Deleted Successfully Product ID:"+KEY_PRODUCTNAME, Toast.LENGTH_SHORT).show();
 
                         dialog.dismiss();
 
@@ -104,6 +105,14 @@ public class ViewProduct extends AppCompatActivity {
         });
 
 
+        btn_Update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                KEY_UPDATE = true;
+
+                startActivity(new Intent(ViewProduct.this, AddProduct.class));
+            }
+        });
 
     }
 
